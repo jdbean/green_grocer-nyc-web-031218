@@ -1,7 +1,11 @@
 def consolidate_cart(cart)
-  cart.each_with_object({}) do |item, new_hash|
-    item.each do |key, data_hash|
+  cart.each_with_object({}) do |item_hash, new_hash|
+    item.each do |item, data_hash|
       new_hash[key] ||= []
+      data_hash.each do |key, value|
+        new_hash
+    end
+  end
 end
 def apply_coupons(cart, coupons)
 
@@ -15,4 +19,3 @@ end
 def checkout(cart, coupons)
   # code here
 end
-
