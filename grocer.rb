@@ -1,9 +1,11 @@
 def consolidate_cart(cart)
   cart.each_with_object({}) do |item_hash, new_hash|
     item.each do |item, data_hash|
-      new_hash[key] ||= []
+      new_hash[item] ||= []
       data_hash.each do |key, value|
-        new_hash
+        new_hash[key] = value
+        new_hash[:count] ||= []
+        new_hash[:count] += 1
     end
   end
 end
